@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &46154733
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9802,6 +9802,11 @@ MonoBehaviour:
   dialouge_box: {fileID: 46154732}
   dialouge_text: {fileID: 656098781}
   dialouge_active: 0
+  dialog_lines:
+  - My name is Jeff
+  - Welcome to Darksoul RIPOFF
+  - get buged lol
+  current_line: 0
 --- !u!1 &510788058
 GameObject:
   m_ObjectHideFlags: 0
@@ -10815,6 +10820,7 @@ MonoBehaviour:
   walk_time: 1
   wait_time: 2
   walk_zone: {fileID: 543462284}
+  can_move: 0
 --- !u!1 &800027172
 GameObject:
   m_ObjectHideFlags: 0
@@ -12371,6 +12377,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: Welcome
+  dialogue_lines:
+  - Hey there!
+  - Want to make 50 quid!
+  - Kill 10 blue slimes
+  - And comback to claim your reward
 --- !u!1 &1110661602
 GameObject:
   m_ObjectHideFlags: 0
@@ -17198,16 +17209,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872934717017393237, guid: a9a8b0f489277564c8c70ee44906b601,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 928204063
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872934717017393237, guid: a9a8b0f489277564c8c70ee44906b601,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8452448036217726689, guid: a9a8b0f489277564c8c70ee44906b601,
         type: 3}

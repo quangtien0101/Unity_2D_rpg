@@ -22,10 +22,14 @@ public class Villager_movement : MonoBehaviour
     private Vector2 max_walk_point;
 
     private bool has_walk_zone = false;
-    
+
+    public bool can_move;
+    private Dialogue_manager the_dm;
+
     void Start()
     {
         my_rigid_body = GetComponent<Rigidbody2D>();
+        the_dm = FindObjectOfType<Dialogue_manager>();
         wait_counter = wait_time; 
         walk_counter = walk_time;
         choose_Direction();
@@ -36,12 +40,25 @@ public class Villager_movement : MonoBehaviour
             max_walk_point = walk_zone.bounds.max;
             has_walk_zone = true;
         }
+        can_move = true;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!the_dm.dialouge_active)
+        {
+            can_move = true;   
+        }
+
+        if (!can_move)
+        {
+            my_rigid_body.velocity = Vector2.zero;
+            return;
+        }
+
+
         if (is_walking)
         {
             walk_counter -= Time.deltaTime;

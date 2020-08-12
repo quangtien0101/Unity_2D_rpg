@@ -28,7 +28,8 @@ public class player_controller : MonoBehaviour
 
     //handling the start position of the player in every sceen
     public string start_point;
-    
+
+    public bool can_move = true;
 
 
     // Start is called before the first frame update
@@ -56,6 +57,11 @@ public class player_controller : MonoBehaviour
         float x_axis_input = 0f;
         float y_axis_input = 0f;
 
+        if (!can_move)
+        {
+            player_rigid.velocity = Vector2.zero;
+            return;
+        }
 
         if (!attacking)
         {
