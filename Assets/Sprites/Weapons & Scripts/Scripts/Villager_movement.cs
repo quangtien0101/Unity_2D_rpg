@@ -16,11 +16,27 @@ public class Villager_movement : MonoBehaviour
     private float wait_counter;
 
     private int walk_direction;
+
+    public Collider2D walk_zone;
+    private Vector2 min_walk_point;
+    private Vector2 max_walk_point;
+
+    private bool has_walk_zone = false;
+    
     void Start()
     {
         my_rigid_body = GetComponent<Rigidbody2D>();
         wait_counter = wait_time; 
         walk_counter = walk_time;
+        choose_Direction();
+
+        if (walk_zone != null)
+        {
+            min_walk_point = walk_zone.bounds.min;
+            max_walk_point = walk_zone.bounds.max;
+            has_walk_zone = true;
+        }
+
     }
 
     // Update is called once per frame
@@ -34,15 +50,35 @@ public class Villager_movement : MonoBehaviour
             {
                 case 0:
                     my_rigid_body.velocity = new Vector2(0, move_speed);
+                    if (has_walk_zone && transform.position.y > max_walk_point.y)
+                    {
+                        is_walking = false;
+                        wait_counter = wait_time;
+                    }
                     break;
                 case 1:
                     my_rigid_body.velocity = new Vector2(move_speed,0);
+                    if (has_walk_zone && transform.position.x > max_walk_point.x)
+                    {
+                        is_walking = false;
+                        wait_counter = wait_time;
+                    }
                     break;
                 case 2:
                     my_rigid_body.velocity = new Vector2(0,-move_speed);
+                    if (has_walk_zone && transform.position.y < min_walk_point.y)
+                    {
+                        is_walking = false;
+                        wait_counter = wait_time;
+                    }
                     break;
                 case 3:
                     my_rigid_body.velocity = new Vector2(-move_speed,0);
+                    if (has_walk_zone && transform.position.x < min_walk_point.x)
+                    {
+                        is_walking = false;
+                        wait_counter = wait_time;
+                    }
                     break;
             }
 
