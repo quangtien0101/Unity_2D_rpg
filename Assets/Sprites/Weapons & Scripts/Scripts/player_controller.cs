@@ -31,6 +31,7 @@ public class player_controller : MonoBehaviour
 
     public bool can_move = true;
 
+    private SFX_manager SFX_MAN;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class player_controller : MonoBehaviour
         anim = GetComponent<Animator>();
         player_sprite = GetComponent<SpriteRenderer>();
         player_rigid = GetComponent<Rigidbody2D>();
+        SFX_MAN = FindObjectOfType<SFX_manager>();
 
         //for moving between levels
         if (!playerExists)
@@ -75,6 +77,8 @@ public class player_controller : MonoBehaviour
                 player_rigid.velocity = Vector2.zero;
                 anim.SetBool("Attack", true);
                 weapon.GetComponent<Hurt_enemy>().on = true;
+
+                SFX_MAN.player_attack.Play();
             }
 
             if ((Mathf.Abs(x_axis_input) > 0.5f) && (Mathf.Abs(y_axis_input) > 0.5f))
