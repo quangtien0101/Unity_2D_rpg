@@ -25,7 +25,7 @@ public class Dialogue_holder : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            if (Input.GetKeyUp(KeyCode.Return))
+            if (Input.GetKey(KeyCode.Return))
             {
                 //d_man.show_box(dialogue);
                 if (!d_man.dialouge_active)
