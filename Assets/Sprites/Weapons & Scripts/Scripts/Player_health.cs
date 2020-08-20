@@ -17,6 +17,7 @@ public class Player_health : MonoBehaviour
 
     private SFX_manager SFX_MAN;
     private Music_manager Music_man;
+    public bool is_dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,14 +33,15 @@ public class Player_health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player_current_health <= 0) 
+        if (player_current_health <= 0 && is_dead == false) 
         {
             Music_man.music_can_play = false;
 
             SFX_MAN.player_dead.Play();
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            is_dead = true;
 
-            Application.LoadLevel("You Die");
+            SceneManager.LoadScene("You Die");
 
         }
 
@@ -67,7 +69,14 @@ public class Player_health : MonoBehaviour
 
     public void Hurt_player(int damage_to)
     {
-        player_current_health = player_current_health - damage_to;
+        int remain_health = player_current_health - damage_to;
+
+        if (remain_health >= 0) 
+        {
+            player_current_health = remain_health;
+        }
+        else
+            player_current_health = 0;
 
         flash_active = true;
         flash_counter = flash_length;
@@ -78,5 +87,13 @@ public class Player_health : MonoBehaviour
     public void Set_max_health()
     {
         player_current_health = player_max_health;
+    }
+
+    public void Restart()
+    {
+        player_current_health = 1;
+        Music_man.music_can_play = true;
+        is_dead = false;
+        gameObject.SetActive(true);
     }
 }
