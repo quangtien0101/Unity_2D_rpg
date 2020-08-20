@@ -13,6 +13,7 @@ public class Music_switcher : MonoBehaviour
     {
         Music_man = FindObjectOfType<Music_manager>();
 
+        
         if (switch_on_start)
         {
             Music_man.Switch_Track(new_track);

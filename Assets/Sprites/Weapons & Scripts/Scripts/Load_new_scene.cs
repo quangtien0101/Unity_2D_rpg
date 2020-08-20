@@ -26,7 +26,7 @@ public class Load_new_scene : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            Application.LoadLevel(levelToLoad);
+            SceneManager.LoadScene(levelToLoad);
             the_player.start_point = exit_point;
              
         }

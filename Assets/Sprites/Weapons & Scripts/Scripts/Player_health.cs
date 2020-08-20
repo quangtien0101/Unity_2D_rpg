@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player_health : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class Player_health : MonoBehaviour
     private SpriteRenderer player_sprite;
 
     private SFX_manager SFX_MAN;
+    private Music_manager Music_man;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,7 @@ public class Player_health : MonoBehaviour
 
         player_sprite = GetComponent<SpriteRenderer>();
         SFX_MAN = FindObjectOfType<SFX_manager>();
+        Music_man = FindObjectOfType<Music_manager>();
 
     }
 
@@ -30,10 +34,13 @@ public class Player_health : MonoBehaviour
     {
         if (player_current_health <= 0) 
         {
-            SFX_MAN.player_dead.Play();
+            Music_man.music_can_play = false;
 
-            gameObject.SetActive(false);    
-            
+            SFX_MAN.player_dead.Play();
+            gameObject.SetActive(false);
+
+            Application.LoadLevel("You Die");
+
         }
 
         if (flash_active)

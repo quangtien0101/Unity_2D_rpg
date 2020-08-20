@@ -13,7 +13,7 @@ public class UI_manager : MonoBehaviour
     public Text xp_text_number;
     public Text level_number;
     //refering to the script that manage the player health
-    public Player_health player_health;
+    private Player_health player_health;
     private Player_stats player_stats;
 
     private static bool UI_Exist;
@@ -25,6 +25,7 @@ public class UI_manager : MonoBehaviour
         {
             UI_Exist = true;
             DontDestroyOnLoad(transform.gameObject);
+            player_health = FindObjectOfType<Player_health>();
         }
         else
         {
