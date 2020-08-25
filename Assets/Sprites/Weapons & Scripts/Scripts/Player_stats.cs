@@ -58,4 +58,17 @@ public class Player_stats : MonoBehaviour
         current_attack = attack_levelup[current_level];
         current_defence = defence_levelup[current_level];
     }
+
+    public void Restart()
+    {
+        current_level = 1;
+        current_hp = hp_levelup[1];
+        current_attack = attack_levelup[1];
+        current_defence = attack_levelup[1];
+        current_exp = 0;
+        
+
+        the_player_health.player_max_health = current_hp;
+        the_player_health.player_current_health = current_hp;
+    }
 }
