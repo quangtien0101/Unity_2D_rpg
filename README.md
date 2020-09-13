@@ -1,10 +1,12 @@
-# Unity_2D_rpg
+1751106 - Nguyễn Văn Quang Tiến
+1751104 - Nguyễn Ngọc Thiện
 
-Unity version 2019.4.1f1
+HERO AGE - 2D RPG top-down view
 
-Nguyễn Ngọc Thiện - 1751104
+How to play:
 
-Nguyễn Văn Quang Tiến - 1751106
+W,A,S,D or Arrow keys to move around
 
-Topdown RPG zelda-like game
+Space to attack
 
+Enter to interact with NPC when near
