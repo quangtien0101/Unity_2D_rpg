@@ -33,6 +33,7 @@ public class player_controller : MonoBehaviour
 
     private SFX_manager SFX_MAN;
 
+    public Inventory player_inventory;
     // Start is called before the first frame update
     void Start()
     {
