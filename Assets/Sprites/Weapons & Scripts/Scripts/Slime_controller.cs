@@ -22,6 +22,8 @@ public class Slime_controller: MonoBehaviour
 
     private GameObject the_player;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,12 @@ public class Slime_controller: MonoBehaviour
         // this help all the slimes not to move at the same time
         time_between_move_counter = Random.Range(time_between_move * 0.75f, time_between_move * 1.25f);
         time_to_move_counter = Random.Range(time_to_move * 0.75f, time_to_move * 1.25f);
+
+        for (int a = 0; a < transform.childCount; a++)
+        {
+            transform.GetChild(a).gameObject.SetActive(false);
+        }
+
     }
 
     // Update is called once per frame

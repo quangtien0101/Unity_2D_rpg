@@ -67,6 +67,7 @@ public class Player_stats : MonoBehaviour
         current_defence = attack_levelup[1];
         current_exp = 0;
         
+       
 
         the_player_health.player_max_health = current_hp;
         the_player_health.player_current_health = current_hp;

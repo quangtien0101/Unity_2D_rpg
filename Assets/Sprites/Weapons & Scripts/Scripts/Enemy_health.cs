@@ -9,6 +9,10 @@ public class Enemy_health : MonoBehaviour
 
     public int  exp_to_give;
     private Player_stats player_stats;
+
+    public GameObject[] loot_drop;
+    private Vector3 loot_position;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +27,23 @@ public class Enemy_health : MonoBehaviour
         if (enemy_current_health <= 0)
         {
             //gameObject.SetActive(false);
+          
             Destroy(gameObject);
 
+            //droping loot
+            int max_loot = loot_drop.Length;
+            for (int i = 0; i < max_loot; i++) 
+            {
+                loot_position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                if (i % 2 == 0)
+                {
+                    loot_position.x += i/3;
+                }
+                if (i % 2 != 0)
+                    loot_position.y += i/3;
+                Instantiate(loot_drop[i], loot_position, Quaternion.identity);
+            }
+            
             player_stats.Add_exp(exp_to_give);
         }
 
