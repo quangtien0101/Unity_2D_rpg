@@ -2102,6 +2102,9 @@ TextureImporter:
   - first:
       213: -575051773029094908
     second: atlas_699
+  - first:
+      213: -311660128104283837
+    second: atlas_700
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -3042,10 +3045,10 @@ TextureImporter:
       name: atlas_40
       rect:
         serializedVersion: 2
-        x: 400
-        y: 464
-        width: 16
-        height: 16
+        x: 402
+        y: 400
+        width: 92
+        height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -16894,6 +16897,27 @@ TextureImporter:
       bones: []
       spriteID: 40a642d85710508f0800000000000000
       internalID: -575051773029094908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_700
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 267
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34101b5c3c2ccabf0800000000000000
+      internalID: -311660128104283837
       vertices: []
       indices: 
       edges: []

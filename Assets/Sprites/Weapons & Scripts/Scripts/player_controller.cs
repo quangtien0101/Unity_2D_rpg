@@ -14,6 +14,8 @@ public class player_controller : MonoBehaviour
     private Animator anim;
     private Rigidbody2D player_rigid;
 
+    private bag_manager bag;
+
     public GameObject weapon;
     private SpriteRenderer weapon_sprite;
 
@@ -41,6 +43,7 @@ public class player_controller : MonoBehaviour
         player_sprite = GetComponent<SpriteRenderer>();
         player_rigid = GetComponent<Rigidbody2D>();
         SFX_MAN = FindObjectOfType<SFX_manager>();
+        bag = FindObjectOfType<bag_manager>();
 
         //for moving between levels
         if (!playerExists)
@@ -64,6 +67,11 @@ public class player_controller : MonoBehaviour
         {
             player_rigid.velocity = Vector2.zero;
             return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            bag.toggle_bag();
         }
 
         if (!attacking)
