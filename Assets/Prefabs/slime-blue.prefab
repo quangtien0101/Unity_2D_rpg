@@ -192,4 +192,4 @@ MonoBehaviour:
   exp_to_give: 25
   loot_drop:
   - {fileID: 1869564616406534905, guid: 923aa10eb1a0c314e8c0682c00088e69, type: 3}
-  - {fileID: 9016995399189484319, guid: ce8d6f4b746703144842610aae530d78, type: 3}
+  enemy_quest_name: slime

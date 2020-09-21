@@ -14,6 +14,10 @@ public class Quest_object : MonoBehaviour
     public bool is_quest_item;
     public string target_item;
 
+    public bool is_enemy_quest;
+    public string target_enemy;
+    public int enemies_to_kill;
+    private int enemy_kill_count;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,20 @@ public class Quest_object : MonoBehaviour
             if (the_qm.item_collected == target_item)
             {
                 the_qm.item_collected = null;
+                End_quest();
+            }
+        }
+
+        if (is_enemy_quest)
+        {
+            if (the_qm.enemy_killed == target_enemy)
+            {
+                the_qm.enemy_killed = null;
+                enemy_kill_count ++;
+            }
+
+            if (enemy_kill_count >= enemies_to_kill)
+            {
                 End_quest();
             }
         }

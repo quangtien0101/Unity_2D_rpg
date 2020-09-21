@@ -383,6 +383,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9a8b0f489277564c8c70ee44906b601, type: 3}
+--- !u!114 &650775875 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 720767538, guid: 6b94622f6b6d5a94c95756770bb35c97,
+    type: 3}
+  m_PrefabInstance: {fileID: 1158980950}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c84f7f0a9f64e4898b5573830649a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &871380119
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,14 +797,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1415357580, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
-      propertyPath: quest_number
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1415357580, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
-      propertyPath: target_item
-      value: crystal
-      objectReference: {fileID: 0}
     - target: {fileID: 1168942250197992518, guid: 6b94622f6b6d5a94c95756770bb35c97,
         type: 3}
       propertyPath: m_Name
@@ -913,6 +917,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4426025628048947934, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: quests.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426025628048947934, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: quests.Array.data[4]
+      value: 
+      objectReference: {fileID: 650775875}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
 --- !u!1 &1376984523

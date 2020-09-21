@@ -11,7 +11,7 @@ public class Quest_manager: MonoBehaviour
 
     public string item_collected;
 
-    
+    public string enemy_killed;
 
     // Start is called before the first frame update
     void Start()

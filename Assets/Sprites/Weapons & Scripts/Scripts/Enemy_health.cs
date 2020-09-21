@@ -13,12 +13,19 @@ public class Enemy_health : MonoBehaviour
     public GameObject[] loot_drop;
     private Vector3 loot_position;
 
+
+    public string enemy_quest_name;
+    private Quest_manager the_QM;
+
+
     // Start is called before the first frame update
     void Start()
     {
         enemy_current_health = enemy_max_health;
 
         player_stats = FindObjectOfType<Player_stats>();
+
+        the_QM = FindObjectOfType<Quest_manager>();
     }
 
     // Update is called once per frame
@@ -26,6 +33,9 @@ public class Enemy_health : MonoBehaviour
     {
         if (enemy_current_health <= 0)
         {
+            //give the name of the current enemy to the quest manager 
+            the_QM.enemy_killed = enemy_quest_name;
+
             //gameObject.SetActive(false);
           
             Destroy(gameObject);
