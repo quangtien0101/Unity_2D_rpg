@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public Item current_item;
-    public List<Item> items = new List<Item>();
-    public int number_of_keys;
-
+    public Item[] items;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //set everything to zero
+        for (int i = 0; i < items.Length; i++)
+        {
+                items[i].quantity = 0;
+        }
     }
 
     // Update is called once per frame
@@ -23,17 +25,20 @@ public class Inventory : MonoBehaviour
 
     public void Add_item(Item item_to_add)
     {
-        //Is the Item a key
-        if (item_to_add.is_key)
+        for (int i = 0; i < items.Length; i++)
         {
-            number_of_keys++;
-        }
-        else 
-        {
-            if (!items.Contains(item_to_add))
+            if (items[i].item_name == item_to_add.item_name)
             {
-                items.Add(item_to_add);
+                items[i].quantity += item_to_add.quantity;
+                break;
             }
         }
+
+
+    }
+
+    // the player will press a button to use one health potion in order to restore some of his missing health
+    public void use_health_potoin()
+    { 
     }
 }
