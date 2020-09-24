@@ -9,54 +9,47 @@ public class MinionAI : MonoBehaviour{
     public float attackRange = 3f;
     public float attackRate = 0.3f;
     
-    private Transform startingPosition;
-    private Vector3 startingPos;
+    private Vector3 startingPosition;
     private float initialScale;
     private float nextAttackTime;
     private Animator anim;
 
     
     void Start(){
-        startingPosition = transform;
-        startingPos = transform.position;
-        initialScale = transform.localScale.x;
+        startingPosition = transform.position;
         anim = GetComponent<Animator>();
+        initialScale = transform.localScale.x;
+
     }
 
     void Update(){
-        float roamDistance = Vector3.Distance(player.position, startingPos);
-        float travelDistance = Vector3.Distance(transform.position, startingPos);
+        float roamDistance = Vector3.Distance(player.position, startingPosition);
         float distance = Vector3.Distance(transform.position, player.position);
-
+        Vector3 direction = player.position - transform.position;
         anim.SetBool("inAttackRange", false);
         anim.SetBool("isRunning", false);
-        if (roamDistance <= roamRange){     
-            Rotate(player);
-            anim.SetBool("isRunning", true);  
-            if (distance <= attackRange){
-                anim.SetBool("inAttackRange", true);
-            }
-            else{                
-                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-            }
-        }
-        else{
-            if (travelDistance != 0){
-                Rotate(startingPosition);
-                anim.SetBool("isRunning", true);
-                transform.position = Vector3.MoveTowards(transform.position, startingPos, moveSpeed * Time.deltaTime);
-            }
-        }
-    }
 
-    void Rotate(Transform destination){
-        Vector3 direction = destination.position - transform.position;
-        Debug.Log(direction.x);
         if (direction.x >= 0){
             transform.localScale = new Vector2(initialScale, transform.localScale.y);
         }
         else {
             transform.localScale = new Vector2(-initialScale, transform.localScale.y);
         }
+
+        if (roamDistance <= roamRange){     
+            anim.SetBool("isRunning", true);  
+            if (distance <= attackRange){
+                anim.SetBool("inAttackRange", true);
+            }
+            else{
+                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            }
+        }
+        else{
+            anim.SetBool("isRunning", true);
+            transform.position = Vector3.MoveTowards(transform.position, startingPosition, moveSpeed * Time.deltaTime);
+            anim.SetBool("isRunning", false);
+        }
+
     }
 }
