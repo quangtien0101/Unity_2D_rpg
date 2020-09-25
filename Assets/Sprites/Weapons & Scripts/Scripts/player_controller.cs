@@ -35,7 +35,7 @@ public class player_controller : MonoBehaviour
 
     private SFX_manager SFX_MAN;
 
-    public Inventory player_inventory;
+    private Inventory player_inventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +44,8 @@ public class player_controller : MonoBehaviour
         player_rigid = GetComponent<Rigidbody2D>();
         SFX_MAN = FindObjectOfType<SFX_manager>();
         bag = FindObjectOfType<bag_manager>();
+
+        player_inventory = FindObjectOfType<Inventory>();
 
         //for moving between levels
         if (!playerExists)
@@ -73,6 +75,12 @@ public class player_controller : MonoBehaviour
         {
             bag.toggle_bag();
         }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            player_inventory.use_health_potoin();
+        }
+
 
         if (!attacking)
         {

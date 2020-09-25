@@ -895,6 +895,56 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1168942250514986996, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: defense_levelup.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168942250514986996, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: defense_levelup.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168942250514986996, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: defense_levelup.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168942250514986996, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: defense_levelup.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168942250514986996, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: defense_levelup.Array.data[4]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168942250514986996, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: defense_levelup.Array.data[5]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168942250514986996, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: defense_levelup.Array.data[6]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168942250514986996, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: defense_levelup.Array.data[7]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168942250514986996, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: defense_levelup.Array.data[8]
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168942250514986996, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: defense_levelup.Array.data[9]
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1168942252209361909, guid: 6b94622f6b6d5a94c95756770bb35c97,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -904,6 +954,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827937911700025112, guid: 6b94622f6b6d5a94c95756770bb35c97,
+        type: 3}
+      propertyPath: percent_health_to_restore
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}

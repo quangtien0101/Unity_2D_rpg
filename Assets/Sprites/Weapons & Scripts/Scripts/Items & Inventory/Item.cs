@@ -26,7 +26,7 @@ public class Item : MonoBehaviour
     }
 
     //item will be remove from the ground if the player hit the item
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         // we will add item to the player inventory
         if (other.gameObject.name == "Player")
