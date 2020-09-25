@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MinionAI : MonoBehaviour{
-    public Transform player;
+    private Transform player;
+    
     public float moveSpeed = 5f;
     public float roamRange = 30f;
     public float attackRange = 3f;
@@ -21,6 +22,7 @@ public class MinionAI : MonoBehaviour{
         startingPos = transform.position;
         initialScale = transform.localScale.x;
         anim = GetComponent<Animator>();
+        player = GameObject.Find("Player").transform;
     }
 
     void Update(){
