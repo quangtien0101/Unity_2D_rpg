@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public Item[] items;
     private Player_stats the_player_stats;
+    private Player_health the_player_health;
 
     private int sword_index;
     private int shield_index;
@@ -20,6 +21,7 @@ public class Inventory : MonoBehaviour
     {
         
         the_player_stats = FindObjectOfType<Player_stats>();
+        the_player_health = FindObjectOfType<Player_health>();
 
         //start indexing everything 
         //set everything to zero
@@ -90,7 +92,9 @@ public class Inventory : MonoBehaviour
         int health_to_restore = 0;
         health_to_restore = (int)(percent_health_to_restore/100 * the_player_stats.maximum_hp());
 
-        the_player_stats.restore_health(health_to_restore);
+        the_player_health.restore_health(health_to_restore);
+        items[health_potion_index].quantity -= 1;
+
     }
 
     public void update_stats()

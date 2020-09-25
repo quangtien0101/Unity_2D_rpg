@@ -96,4 +96,11 @@ public class Player_health : MonoBehaviour
         is_dead = false;
         gameObject.SetActive(true);
     }
+
+    public void restore_health(int health_to_restore)
+    {
+        player_current_health += health_to_restore;
+        if (player_current_health > player_max_health)
+            player_current_health = player_max_health;
+    }
 }

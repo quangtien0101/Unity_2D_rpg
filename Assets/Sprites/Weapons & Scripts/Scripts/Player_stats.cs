@@ -97,13 +97,6 @@ public class Player_stats : MonoBehaviour
     }
 
 
-    public void restore_health(int health_to_restore)
-    {
-        current_hp += health_to_restore;
-        // check if we reach maximum health 
-        if (current_hp > hp_levelup[current_level])
-            current_hp = hp_levelup[current_level];
-    }
 
     public int maximum_hp()
     {
