@@ -7,7 +7,6 @@ public class MinionAI : MonoBehaviour{
     
     public float moveSpeed = 5f;
     public float roamRange = 30f;
-    public float attackRange = 3f;
     public float attackRate = 0.3f;
     
     private Transform startingPosition;
@@ -30,12 +29,12 @@ public class MinionAI : MonoBehaviour{
     void Update(){
         float roamDistance = Vector3.Distance(player.position, startingPos);
         float travelDistance = Vector3.Distance(transform.position, startingPos);
-        anim.SetBool("isRunning", false);
-
+        
         if (roamDistance <= roamRange){     
-            Rotate(player);
-            anim.SetBool("isRunning", true);  
-            if(!isAttacking){                
+            Rotate(player);       
+            if(!isAttacking){     
+                anim.SetBool("inAttackRange", false);
+                anim.SetBool("isRunning", true);        
                 transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
             }
         }
@@ -43,14 +42,18 @@ public class MinionAI : MonoBehaviour{
             if (travelDistance != 0){
                 Rotate(startingPosition);
                 anim.SetBool("isRunning", true);
+                anim.SetBool("inAttackRange", false);
                 transform.position = Vector3.MoveTowards(transform.position, startingPos, moveSpeed * Time.deltaTime);
+            }
+            else {
+                anim.SetBool("isRunning", false);
+                anim.SetBool("inAttackRange", false);
             }
         }
     }
 
     void Rotate(Transform destination){
         Vector3 direction = destination.position - transform.position;
-        Debug.Log(direction.x);
         if (direction.x >= 0){
             transform.localScale = new Vector2(initialScale, transform.localScale.y);
         }
@@ -61,15 +64,19 @@ public class MinionAI : MonoBehaviour{
 
     void OnCollisionStay2D(Collision2D other){
         if (other.gameObject.name == "Player"){
+            Debug.Log("touching");
             isAttacking = true;
             anim.SetBool("inAttackRange", true);
+            anim.SetBool("isRunning", false);   
         }
     }
 
     void OnCollisionExit2D(Collision2D other){
         if (other.gameObject.name == "Player"){
+            Debug.Log("no touching");
             isAttacking = false;
             anim.SetBool("inAttackRange", false);
+            anim.SetBool("isRunning", true);   
         }
     }
 }

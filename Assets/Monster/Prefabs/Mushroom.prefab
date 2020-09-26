@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3043621789585987702}
   m_Layer: 0
   m_Name: Mushroom
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,9 +69,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 928204063
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4723107735738678597, guid: 74c6a385837eb4979845b38a59c7b208,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,10 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d09bb834ae64c76bbb50c7b12f3365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   moveSpeed: 5
   roamRange: 10
-  attackRange: 3
   attackRate: 0.3
 --- !u!95 &3043621789585987702
 Animator:
