@@ -13,6 +13,7 @@ public class MinionAI : MonoBehaviour{
     private Transform startingPosition;
     private Vector3 startingPos;
     private float initialScale;
+    private bool isAttacking = false;
     private float nextAttackTime;
     private Animator anim;
 
@@ -29,17 +30,12 @@ public class MinionAI : MonoBehaviour{
     void Update(){
         float roamDistance = Vector3.Distance(player.position, startingPos);
         float travelDistance = Vector3.Distance(transform.position, startingPos);
-        float distance = Vector3.Distance(transform.position, player.position);
-
-        anim.SetBool("inAttackRange", false);
         anim.SetBool("isRunning", false);
+
         if (roamDistance <= roamRange){     
             Rotate(player);
             anim.SetBool("isRunning", true);  
-            if (distance <= attackRange){
-                anim.SetBool("inAttackRange", true);
-            }
-            else{                
+            if(!isAttacking){                
                 transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
             }
         }
@@ -60,6 +56,20 @@ public class MinionAI : MonoBehaviour{
         }
         else {
             transform.localScale = new Vector2(-initialScale, transform.localScale.y);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D other){
+        if (other.gameObject.name == "Player"){
+            isAttacking = true;
+            anim.SetBool("inAttackRange", true);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other){
+        if (other.gameObject.name == "Player"){
+            isAttacking = false;
+            anim.SetBool("inAttackRange", false);
         }
     }
 }
