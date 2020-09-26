@@ -7,11 +7,9 @@ using UnityEngine.UI;
 public class Chest : MonoBehaviour
 {
     //what is in the chest
-    public Item contents;
+    
     public bool is_open = false;
-    public GameObject diaglog_window;
-
-    public Text diagliog_text;
+   
     private Animator anim;
    
 
@@ -34,8 +32,12 @@ public class Chest : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Return))
             {
-                is_open = true;
-                anim.SetBool("open_chest" ,true) ;
+                if (!is_open) 
+                {
+                    is_open = true;
+                    anim.SetBool("open_chest", true);
+                }
+             
             }
         }
     }
