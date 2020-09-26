@@ -14,6 +14,9 @@ public class PauseMenu : MonoBehaviour
     {
       isPause = false;
       pauseMenu.SetActive(isPause);
+
+        the_player = FindObjectOfType<player_controller>();
+        
       if (!pauseExist)
       {
         pauseExist = true;
