@@ -12,8 +12,6 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-      Debug.Log("trigger");
-      Debug.Log(pauseExist);
       isPause = false;
       pauseMenu.SetActive(isPause);
       if (!pauseExist)
@@ -30,7 +28,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
       Scene scene = SceneManager.GetActiveScene();
-      if (Input.GetKeyDown(KeyCode.Escape) && scene.name != "Menu")
+      if (Input.GetKeyDown(KeyCode.P) && (scene.name != "Menu" || scene.name != "You Die"))
       {
         if (isPause) {
           ResumeGame();
@@ -43,12 +41,14 @@ public class PauseMenu : MonoBehaviour
       isPause = false;
       pauseMenu.SetActive(isPause);
       Time.timeScale = 1f;
+      the_player.can_move = true;
     }
 
     public void PauseGame () {
       isPause = true;
       pauseMenu.SetActive(isPause);
       Time.timeScale = 0f;
+      the_player.can_move = false;
     }
 
     public void SaveGame () {
