@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Act1/1.unity
     guid: d74b11e03d56d9a4bac2c6545e580d11
   - enabled: 1
+    path: Assets/Scenes/Act1/2.unity
+    guid: 70a74af34a0d70d43a1369ceaa6f9a14
+  - enabled: 1
     path: Assets/Scenes/You Die.unity
     guid: e55a9a42ff795e04188bbc67b17c9cc2
   m_configObjects:

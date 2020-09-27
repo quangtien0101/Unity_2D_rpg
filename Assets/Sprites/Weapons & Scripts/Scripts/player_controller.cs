@@ -79,6 +79,7 @@ public class player_controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             player_inventory.use_health_potoin();
+            SFX_MAN.player_heal.Play();
         }
 
 

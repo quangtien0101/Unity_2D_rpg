@@ -270,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 1812748996011742859, guid: 4191496610a06d54482757c60e20292b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -69.71238
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1812748996011742859, guid: 4191496610a06d54482757c60e20292b,
         type: 3}
@@ -784,6 +784,50 @@ PrefabInstance:
     - target: {fileID: 417652880, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443459478, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: start_text
+      value: Swords will give you bonus attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 443459478, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: end_text
+      value: Each sword gives you +10 damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054319499, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: start_text
+      value: Find the chest near the water fall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054319499, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: end_text
+      value: Check it out, there's some goodies
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672873695, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: start_text
+      value: Health potion restore your HP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672873695, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: end_text
+      value: Each restores 10% of your current max health
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672873695, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: is_quest_item
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672873695, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: target_item
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749936298, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: quest_number
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749936298, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: start_text
+      value: Shield will give you bonus defense
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749936298, guid: 6b94622f6b6d5a94c95756770bb35c97, type: 3}
+      propertyPath: end_text
+      value: Each shield give you +5 def
       objectReference: {fileID: 0}
     - target: {fileID: 1168942250197992518, guid: 6b94622f6b6d5a94c95756770bb35c97,
         type: 3}
@@ -1591,7 +1635,7 @@ PrefabInstance:
     - target: {fileID: 6570935679773003110, guid: 90a023ac4311b704687198c71ca1b493,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -68.80859
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6570935679773003110, guid: 90a023ac4311b704687198c71ca1b493,
         type: 3}

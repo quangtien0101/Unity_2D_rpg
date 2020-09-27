@@ -26,7 +26,8 @@ public class Player_stats : MonoBehaviour
 
     private int bonus_attack = 0;
     private int bonus_defense = 0;
-    
+
+    private SFX_manager sfx_man;
     
 
     // Start is called before the first frame update
@@ -37,6 +38,8 @@ public class Player_stats : MonoBehaviour
         current_hp = hp_levelup[1];
         current_attack = attack_levelup[1] + bonus_attack;
         current_defense = attack_levelup[1] + bonus_defense;
+
+        sfx_man = FindObjectOfType<SFX_manager>();
     }
 
     // Update is called once per frame
@@ -67,6 +70,8 @@ public class Player_stats : MonoBehaviour
 
         current_attack = attack_levelup[current_level] + bonus_attack;
         current_defense = defense_levelup[current_level] + bonus_defense;
+
+        sfx_man.player_level_up.Play();
     }
 
     public void Restart()

@@ -98,7 +98,7 @@ MonoBehaviour:
   item_name: health_potion
   item_description: Restore 10% max health
   is_key: 0
-  quantity: 0
+  quantity: 1
 --- !u!61 &-6951464821778812007
 BoxCollider2D:
   m_ObjectHideFlags: 0

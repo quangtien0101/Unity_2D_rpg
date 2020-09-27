@@ -7,6 +7,8 @@ public class SFX_manager : MonoBehaviour
     public AudioSource player_hurt;
     public AudioSource player_attack;
     public AudioSource player_dead;
+    public AudioSource player_heal;
+    public AudioSource player_level_up;
 
     private static bool sfxman_exist;
 
