@@ -11,6 +11,8 @@ public class Hurt_player : MonoBehaviour
 
     private Player_stats the_player_stats;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class Hurt_player : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
+
             current_damage = damage_to - the_player_stats.current_defense;
             if (current_damage <= 0)
                 current_damage = 1;
@@ -33,8 +36,9 @@ public class Hurt_player : MonoBehaviour
             other.gameObject.GetComponent<Player_health>().Hurt_player(current_damage);
             var clone = (GameObject)Instantiate(damage_number, other.transform.position, Quaternion.Euler(Vector3.zero));
             clone.GetComponent<Floating_numbers>().damages = current_damage;
+
         }
        
-      
     }
+    
 }
