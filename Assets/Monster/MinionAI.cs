@@ -26,7 +26,7 @@ public class MinionAI : MonoBehaviour{
         anim = GetComponent<Animator>();
     }
 
-    void Update(){
+    void FixedUpdate(){
         float roamDistance = Vector3.Distance(player.position, startingPos);
         float travelDistance = Vector3.Distance(transform.position, startingPos);
         

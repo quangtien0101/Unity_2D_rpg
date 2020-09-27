@@ -28,6 +28,7 @@ public class Hurt_player : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
+
             current_damage = damage_to - the_player_stats.current_defense;
             if (current_damage <= 0)
                 current_damage = 1;
