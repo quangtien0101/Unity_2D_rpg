@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f7be079853662418f516d2f4e80978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage_to: 1
+  damage_to: 40
   damage_number: {fileID: 3038542942433092132, guid: 811baeba82d6ce242bc75213f7e2eb3e,
     type: 3}
 --- !u!1 &8320767219522733117
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  roamRange: 30
+  roamRange: 20
   attackRate: 0.3
 --- !u!95 &8320767219522733116
 Animator:
@@ -259,9 +259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9eaa6f6e091cd45b4ae140b6da26f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_max_health: 200
+  enemy_max_health: 150
   enemy_current_health: 0
-  exp_to_give: 25
+  exp_to_give: 50
   loot_drop:
-  - {fileID: 1869564616406534905, guid: 923aa10eb1a0c314e8c0682c00088e69, type: 3}
-  enemy_quest_name: slime
+  - {fileID: 0}
+  - {fileID: 0}
+  enemy_quest_name: skeleton

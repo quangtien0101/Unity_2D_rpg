@@ -38,23 +38,18 @@ public class Enemy_health : MonoBehaviour
 
             //gameObject.SetActive(false);
           
-            Destroy(gameObject);
 
             //droping loot
             int max_loot = loot_drop.Length;
-            for (int i = 0; i < max_loot; i++) 
-            {
-                loot_position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                if (i % 2 == 0)
-                {
-                    loot_position.x += i/3;
-                }
-                if (i % 2 != 0)
-                    loot_position.y += i/3;
+
+            loot_position = transform.position;
+            for (int i = 0; i < max_loot; i++)
                 Instantiate(loot_drop[i], loot_position, Quaternion.identity);
-            }
             
             player_stats.Add_exp(exp_to_give);
+
+            Destroy(gameObject);
+
         }
 
     }
