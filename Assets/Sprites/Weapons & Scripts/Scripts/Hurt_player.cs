@@ -38,7 +38,7 @@ public class Hurt_player : MonoBehaviour
             clone.GetComponent<Floating_numbers>().damages = current_damage;
 
         }
-
+       
     }
-
+    
 }

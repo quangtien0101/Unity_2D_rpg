@@ -25,9 +25,15 @@ namespace Pathfinding {
 			// frame as the destination is used for debugging and may be used for other things by other
 			// scripts as well. So it makes sense that it is up to date every frame.
 			if (ai != null) ai.onSearchPath += Update;
+			
 		}
 
-		void OnDisable () {
+        private void Start()
+        {
+			target = GameObject.Find("Player").transform;
+		}
+
+        void OnDisable () {
 			if (ai != null) ai.onSearchPath -= Update;
 		}
 
